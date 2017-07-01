@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'IndexController@index')->name('homepage')->middleware('guest');
+Route::get('/about-us', 'IndexController@about')->name('about');
 
 Auth::routes();
 
