@@ -19,4 +19,10 @@ class IndexController extends Controller
 
         ]);
     }
+
+    public function room_gallery(){
+        return view('gallery', [
+
+            ]);
+    }
 }

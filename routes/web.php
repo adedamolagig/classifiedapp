@@ -12,7 +12,8 @@
 */
 
 Route::get('/', 'IndexController@index')->name('homepage')->middleware('guest');
-Route::get('/about-us', 'IndexController@about')->name('about');
+Route::get('/about', 'IndexController@about')->name('about');
+Route::get('/room_gallery', 'IndexController@room_gallery')->name('room_gallery');
 
 Auth::routes();
 
