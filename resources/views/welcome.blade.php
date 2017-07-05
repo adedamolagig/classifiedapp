@@ -44,25 +44,38 @@
                             <li role="presentation" class="active">
                                 <a href="#hotel" aria-controls="hotel" role="tab" data-toggle="tab">Hotel</a>
                             </li>
-                            <li role="presentation">
+                            <!--<li role="presentation">
                                 <a href="#car" aria-controls="car" role="tab" data-toggle="tab">Car Rental</a>
-                            </li>
+                            </li>-->
                         </ul>
 
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane fade in active tm-white-bg" id="hotel">
                                 <div class="tm-search-box effect2">
-                                    <form action="#" method="post" class="hotel-search-form">
+                                   <!-- <form action="#" method="post" class="hotel-search-form">-->
+                                        <input type="text" id="myInput" class="hotel-search-form" onkeyup="myFunction()" placeholder="Search for names..">
                                         <div class="tm-form-inner">
                                             <div class="form-group">
-                                                <select class="form-control">
-                                                    <option value="">-- Select Hotel -- </option>
-                                                    <option value="shangrila">Shangri-La</option>
-                                                    <option value="chatrium">Chatrium</option>
-                                                    <option value="fourseasons">Four Seasons</option>
-                                                    <option value="hilton">Hilton</option>
-                                                </select> 
+                                               
+                                               
+                                                <ul id="myUL">
+                                                  <li><a href="#" class="header">A</a></li>
+                                                  <li><a href="#">Hilton</a></li>
+                                                  <li><a href="#">Golden Tulip</a></li>
+                                                
+                                                  <li><a href="#" class="header">B</a></li>
+                                                  <li><a href="#">civi center</a></li>
+                                                  <li><a href="#">Sheraton</a></li>
+                                                
+                                                  <li><a href="#" class="header">C</a></li>
+                                                  <li><a href="#">Labambam</a></li>
+                                                  <li><a href="#">Temperance</a></li>
+                                                  <li><a href="#">AyoIn</a></li>
+                                                </ul>
+                                               
+                                               
+                                               
                                             </div>
                                             <div class="form-group">
                                                 <div class='input-group date' id='datetimepicker1'>
@@ -97,50 +110,13 @@
                                     </form>
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane fade tm-white-bg" id="car">
-                                <div class="tm-search-box effect2">
-                                    <form action="#" method="post" class="hotel-search-form">
-                                        <div class="tm-form-inner">
-                                            <div class="form-group">
-                                                <select class="form-control">
-                                                    <option value="">-- Select Model -- </option>
-                                                    <option value="shangrila">BMW</option>
-                                                    <option value="chatrium">Mercedes-Benz</option>
-                                                    <option value="fourseasons">Toyota</option>
-                                                    <option value="hilton">Honda</option>
-                                                </select> 
-                                            </div>
-                                            <div class="form-group">
-                                                <div class='input-group date-time' id='datetimepicker3'>
-                                                    <input type='text' class="form-control" placeholder="Pickup Date" />
-                                                    <span class="input-group-addon">
-                                                        <span class="fa fa-calendar"></span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <div class='input-group date-time' id='datetimepicker4'>
-                                                    <input type='text' class="form-control" placeholder="Return Date" />
-                                                    <span class="input-group-addon">
-                                                        <span class="fa fa-calendar"></span>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <select class="form-control">
-                                                    <option value="">-- Options -- </option>
-                                                    <option value="">Child Seat</option>
-                                                    <option value="">GPS Navigator</option>
-                                                    <option value="">Insurance</option>
-                                                </select> 
-                                            </div>							           
-                                        </div>							
-                                        <div class="form-group tm-yellow-gradient-bg text-center">
-                                            <button type="submit" name="submit" class="tm-yellow-btn">Check Now</button>
-                                        </div>  
-                                    </form>
-                                </div>
-                            </div>				    
+                            
+                            
+                            
+                            
+                            
+                            
+                            
                         </div>
                     </div>								
                 </div>
@@ -307,4 +283,6 @@
                 </div>		
             </div>
         </section>
+        
+        
     @endsection

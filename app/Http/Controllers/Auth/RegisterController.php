@@ -83,11 +83,5 @@ class RegisterController extends Controller
         mail::to($thisUser['email'])->send(new verifyEmail($thisUser));
     }
     
-    public function verifyEmail(){
-        return view('email.verifyEmail');
-    }
     
-    public function sentEmail($email, $verifyToken){
-        return $email;
-    }
 }

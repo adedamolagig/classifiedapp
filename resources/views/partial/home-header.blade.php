@@ -15,7 +15,7 @@
                         <li><a href="{{ route('login') }}" class="{{ isset($selected_menu)?($selected_menu=='login')?'active':'':'' }}">Login</a></li>
                         <li><a href="{{ route('register') }}" class="{{ isset($selected_menu)?($selected_menu=='register')?'active':'':'' }}">Register</a></li>
                         <li><a href="{{ route('about') }}" class="{{ isset($selected_menu)?($selected_menu=='about')?'active':'':'' }}">About</a></li>
-                        <li><a href="{{ route('room_gallery') }}" class="{{ isset($selected_menu)?($selected_menu=='room_gallery')?'active':'':'' }}">Room Gallery</a></li>
+                        <li><a href="{{ route('gallery') }}" class="{{ isset($selected_menu)?($selected_menu=='gallery')?'active':'':'' }}">Room Gallery</a></li>
                     </ul>
                 </nav>		
             </div>				

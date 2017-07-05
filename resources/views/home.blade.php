@@ -17,7 +17,17 @@ $page_title = 'Welcome '.Auth::user()->name;
                         <div class="panel-heading">Dashboard</div>
 
                         <div class="panel-body">
-                            You are logged in!
+                            <!-- Content -->
+                            <nav >
+                                <ul class="nav tm-nav">
+                                  <li><a class="active" href="{{ route('yourTrips') }}" class="{{ isset($selected_menu)?($selected_menu=='yourTrips')?'active':'':'' }}">Your Trips </a></li>
+                                  <li><a href="{{ route('yourEvents') }}" class="{{ isset($selected_menu)?($selected_menu=='yourEvents')?'active':'':'' }}">Your Events</a></li>
+                                  <li><a href="{{ route('profile') }}" class="{{ isset($selected_menu)?($selected_menu=='profile')?'active':'':'' }}">Profile</a></li>
+                                </ul>
+                            </nav>
+                            
+                            
+                            <!--end of Content-->
                         </div>
                     </div>
                 </div>
