@@ -54,27 +54,14 @@
                             <div role="tabpanel" class="tab-pane fade in active tm-white-bg" id="hotel">
                                 <div class="tm-search-box effect2">
                                    <!-- <form action="#" method="post" class="hotel-search-form">-->
-                                        <input type="text" id="myInput" class="hotel-search-form" onkeyup="myFunction()" placeholder="Search for names..">
-                                        <div class="tm-form-inner">
-                                            <div class="form-group">
-                                               
-                                               
-                                                <ul id="myUL">
-                                                  <li><a href="#" class="header">A</a></li>
-                                                  <li><a href="#">Hilton</a></li>
-                                                  <li><a href="#">Golden Tulip</a></li>
-                                                
-                                                  <li><a href="#" class="header">B</a></li>
-                                                  <li><a href="#">civi center</a></li>
-                                                  <li><a href="#">Sheraton</a></li>
-                                                
-                                                  <li><a href="#" class="header">C</a></li>
-                                                  <li><a href="#">Labambam</a></li>
-                                                  <li><a href="#">Temperance</a></li>
-                                                  <li><a href="#">AyoIn</a></li>
-                                                </ul>
-                                               
-                                               
+                                        <!--<input type="text" id="myInput" class="hotel-search-form" onkeyup="myFunction()" placeholder="Search for names..">-->
+                                         
+                                             <div id="searchfield">
+                                                <form><input type="text" name="currency" class="biginput" id="autocomplete" placeholder="search for hotels.."></form>
+                                              </div><!-- @end #searchfield -->
+                                              
+            
+                                                 
                                                
                                             </div>
                                             <div class="form-group">
@@ -203,11 +190,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <p class="home-description">Holiday is free Bootstrap v3.3.5 responsive template for tour and travel websites. You can download and use this layout for any purpose. You do not need to provide a credit link to us. If you have any question, feel free to <a href="http://www.facebook.com/templatemo" target="_parent">contact us</a>. Credit goes to <a rel="nofollow" href="http://unsplash.com" target="_parent">Unspash</a> for images used in this template.</p>					
-                    </div>
-                </div>			
+               			
             </div>
         </section>		
         

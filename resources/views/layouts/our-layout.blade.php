@@ -15,6 +15,10 @@ http://www.templatemo.com/tm-475-holiday
   <link href="{{ asset('css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">  
   <link href="{{ asset('css/flexslider.css') }}" rel="stylesheet">
   <link href="{{ asset('css/templatemo-style.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('css/style.css')}}" media="all" type="text/css" />
+  <script type="text/javascript" src="{{ asset('js/jquery.autocomplete.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/currency-autocomplete.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/jquery-1.9.1.min.js') }}"></script>
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -132,23 +136,6 @@ http://www.templatemo.com/tm-475-holiday
 	  	});
 	</script>
 	
-	<script>
-            function myFunction() {
-                var input, filter, ul, li, a, i;
-                input = document.getElementById("myInput");
-                filter = input.value.toUpperCase();
-                ul = document.getElementById("myUL");
-                li = ul.getElementsByTagName("li");
-                for (i = 0; i < li.length; i++) {
-                    a = li[i].getElementsByTagName("a")[0];
-                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                        li[i].style.display = "";
-                    } else {
-                        li[i].style.display = "none";
-            
-                    }
-                }
-            }
-        </script>
+
  </body>
  </html>
