@@ -25,6 +25,9 @@ Route::get('user/yourEvents', 'IndexController@yourEvents')->name('yourEvents');
 Route::get('user/yourTrips', 'IndexController@profile')->name('yourTrips');
 Route::get('user/profile', 'IndexController@profile')->name('profile');
 
+//resource controllers
+Route::resource('yourEvents', 'EventsController');
+
 // default routes
 Auth::routes();
 

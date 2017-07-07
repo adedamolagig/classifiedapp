@@ -5,20 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ isset($page_title)?$page_title:'No title' }}</title>
-<!--
-Holiday Template
-http://www.templatemo.com/tm-475-holiday
--->
+
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700' rel='stylesheet' type='text/css'>
   <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
   <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ asset('css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">  
   <link href="{{ asset('css/flexslider.css') }}" rel="stylesheet">
   <link href="{{ asset('css/templatemo-style.css') }}" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/style.css')}}" media="all" type="text/css" />
-  <script type="text/javascript" src="{{ asset('js/jquery.autocomplete.min.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/currency-autocomplete.js') }}"></script>
-  <script type="text/javascript" src="{{ asset('js/jquery-1.9.1.min.js') }}"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" type="text/css" />
+  
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,6 +39,8 @@ http://www.templatemo.com/tm-475-holiday
 	<script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>					<!-- bootstrap js -->
 	<script type="text/javascript" src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>	<!-- bootstrap date time picker js, http://eonasdan.github.io/bootstrap-datetimepicker/ -->
 	<script type="text/javascript" src="{{ asset('js/jquery.flexslider-min.js') }}"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <!--
 	<script src="js/froogaloop.js"></script>
 	<script src="js/jquery.fitvid.js"></script>
@@ -132,9 +129,41 @@ http://www.templatemo.com/tm-475-holiday
 			    controlNav: false
 		    });
 
+// for search button
 
+		$( function() {
+    var availableTags = [
+      "Hilton",
+      "Temperance",
+      "Mabatko Hotels",
+      "Ayo-In",
+      "Labambam",
+      "Protea Hotel and Suites",
+      "Bogobiri House",
+      "Eko Hotels and Suites",
+      "Radisson Blu",
+      "Federal Palace Hotel",
+      "Parkview Astoria Hotel",
+      "Sheraton Hotel and Towers",
+      "Golden Tulip",
+      "Sunshine Hotels & Guest House Annex",
+      "Queens Suites",
+      "Pinnaco Hotel",
+      "Owu Hotels",
+      "Partfinder Hotels",
+      "Lafia Hotel",
+      "Landmark Hotel",
+      "Clarion Hotel and Casino",
+      "First World Hotel and Plaza"
+    ];
+    $( "#autocomplete" ).autocomplete({
+      source: availableTags
+    });
+  } );
+			
 	  	});
 	</script>
+	
 	
 
  </body>

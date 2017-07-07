@@ -57,13 +57,14 @@
                                         <!--<input type="text" id="myInput" class="hotel-search-form" onkeyup="myFunction()" placeholder="Search for names..">-->
                                          
                                              <div id="searchfield">
-                                                <form><input type="text" name="currency" class="biginput" id="autocomplete" placeholder="search for hotels.."></form>
+                                                <form><input type="text" name="currency" class="form-control" id="autocomplete" placeholder="search for hotels.."></form>
                                               </div><!-- @end #searchfield -->
                                               
+                                              <div>&nbsp</div>
             
                                                  
                                                
-                                            </div>
+                                            
                                             <div class="form-group">
                                                 <div class='input-group date' id='datetimepicker1'>
                                                     <input type='text' class="form-control" placeholder="Check-in Date" />
@@ -269,3 +270,4 @@
         
         
     @endsection
+    
