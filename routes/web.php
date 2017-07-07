@@ -32,3 +32,13 @@ Route::resource('yourEvents', 'EventsController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group([
+    'prefix'=>'admin',
+    'middleware'=>['admin.only']
+], function(){
+    Route::get('/dashboard', 'Admin\DashboardController@index')->name('admin.dashboard');
+    Route::get('/rooms/create/{id?}', 'Admin\RoomController@create')->name('admin.rooms.create');
+    Route::post('/rooms/create/submit', 'Admin\RoomController@save')->name('submit.room');
+    Route::post('/rooms/search', 'Admin\RoomController@search')->name('submit.room.search');
+});
