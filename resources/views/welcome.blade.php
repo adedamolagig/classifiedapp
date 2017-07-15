@@ -60,7 +60,7 @@
                                                 <form><input type="text" name="currency" class="form-control" id="autocomplete" placeholder="search for hotels.."></form>
                                               </div><!-- @end #searchfield -->
                                               
-                                              <div>&nbsp</div>
+                                              <div></div>
             
                                                  
                                                

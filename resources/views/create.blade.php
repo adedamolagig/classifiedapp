@@ -4,7 +4,8 @@ $page_title = 'Admin Dashboard';
 $selected_menu = 'rooms';
 @endphp
 @section('body')
-    @include('partial.admin-header')
+     
+        @include('partial.home-header')
     
         <div class="container">
             <div class="row">
@@ -22,7 +23,8 @@ $selected_menu = 'rooms';
                                 @endif
                             </div>
                             <div class="col-lg-6 col-md-6 tm-contact-form-input">
-                                <form method="post" action="{{ route('submit.room') }}">
+                                
+                                <form method="post" action="{{ route('submit', $hotel) }}">
                                     {{ csrf_field() }}
                                     <div class="form-group {{ $errors->has('room_name')?'has-error':'' }}">
                                         <label>Room Name</label>
@@ -53,6 +55,7 @@ $selected_menu = 'rooms';
                                         <button class="btn btn-primary" type="submit">{{ isset($room->room_capacity)?'Update this Room':'Add Room' }}</button>
                                     </div>
                                 </form>
+                               
                             </div>
                             <div class="col-lg-6 col-md-6 tm-contact-form-input">
                                 <h4>Search box</h4>

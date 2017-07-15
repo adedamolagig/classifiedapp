@@ -7,24 +7,45 @@ use App\Http\Controllers\Controller;
 
 use Validator;
 use App\Room;
+use App\Hotel;
 
 class RoomController extends Controller
 {
     //
 
-    public function create(Request $request, $id=null){
-        $one_room = $id?Room::find($id):null;
-        return view('admin.rooms_create', ['room' => $one_room]);
+    public function create(Request $request){
+        
+        
     }
 
-    public function save(Request $request, $id=null){
-        $validate = Validator::make($request->all(), [
-            'room_name'=> 'required|min:5',
-            'room_capacity'=> 'required|min:2',
-            'room_description'=>'required',
-            'room_has_toilet'=>'required|in:1,0'
-        ]);
-        if($validate->fails()){
+    public function save(Hotel $hotel){
+        
+       
+       
+       //$hotel->addroom(request('room_name'));
+       Room::create([
+                'room_name' => request('room_name'),
+                'room_capacity' => request('room_capacity'),
+                'room_description' => request('room_description'),
+                'room_has_toilet' => request('room_has_toilet'),
+                'hotel_id' => $hotel->id
+           ]);
+       
+       
+       
+       
+       /**Room::create([
+            'room_name' => request('room_name'), 
+            
+            
+            'room_capacity' => request('room_capacity'),
+            
+            'hotel_id' => $hotel->id
+            
+            ]);*/
+            
+          
+        /**if($validate->fails()){
             return back()->withErrors($validate->errors())->withInput();
         }
         try{
@@ -42,7 +63,10 @@ class RoomController extends Controller
             return back()->withErrors([
                 'db-error'=>'Serious error occured, Probably a duplicate Room'
             ])->withInput();
-        }
+        }*/
+        
+        return back();
+        
     }
 
     public function search(Request $request){

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class IndexController extends Controller
 {
     //
@@ -14,16 +15,11 @@ class IndexController extends Controller
         ]);
     }
 
-    public function about(){
-        return view('about', [
+  
 
-        ]);
-    }
-
-    public function gallery(){
-        return view('gallery', [
-
-            ]);
+    public function gallery()
+    {
+        
     }
     
      public function yourTrips()
@@ -46,4 +42,15 @@ class IndexController extends Controller
             
             ]);
     }
+    
+    public function CreateRooms()
+    {
+        return view('admin.create');
+    }
+    
+    public function allhotel()
+    {
+        return view('showhotel');
+    }
+    
 }

@@ -17,7 +17,7 @@ class HandleAdmin
     public function handle($request, Closure $next)
     {
         // dd(Auth::user()->is_admin);
-        if(Auth::user()){
+        /**if(Auth::user()){
             if(Auth::user()->is_admin){
                 return $next($request);
             }
@@ -27,7 +27,7 @@ class HandleAdmin
         }
         else{
             return redirect(route('login'));
-        }
+        }*/
         
     }
 }
