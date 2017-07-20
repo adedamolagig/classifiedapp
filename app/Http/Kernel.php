@@ -20,7 +20,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         
         // custom middleware
-        \App\Http\Middleware\RepairPort80::class,
+        //\App\Http\Middleware\RepairPort80::class,
     ];
 
     /**

@@ -10,7 +10,7 @@ class Hotel extends Model
     
     public function rooms()
     {
-        return $this->hasMany(Room::class);
+        return $this->hasMany('App\Room');
     }
     
     public function addroom($room_name)

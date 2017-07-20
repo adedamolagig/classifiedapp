@@ -15,13 +15,15 @@ $selected_menu = 'gallery';
             </div>
             
             <p>{{ $hotel->hotelname }} is located in {{ $hotel->state }} </p>
-            @foreach($hotel->rooms as $room)
-            
-            <!--<article>
-                {{$room->room_description}}
-            </article>-->
-            
-            @endforeach
+            @if($hotel->rooms)
+                @foreach($hotel->rooms as $room)
+                
+                <!--<article>
+                    {{$room->room_description}}
+                </article>-->
+                
+                @endforeach
+            @endif
             <div class="container">
             <div class="row">
                 <div class="panel panel-default">
@@ -90,7 +92,7 @@ $selected_menu = 'gallery';
                                     <h5>Set price for room Types</h5>
                                     
                                         
-                                    <form method="post" action="{{ route('store.price', $room->id) }}">
+                                    <form method="post" action="{{ route('store.price', isset($room)?$room->id:null) }}">
                                         {{ csrf_field() }}
                                         <div class="form-group">
                                             <label>Set price for <!--name of room--></label>

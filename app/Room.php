@@ -1,9 +1,7 @@
 <?php
 
 namespace App;
-
-
-//use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
 class Room extends Hotel
 {
@@ -14,12 +12,12 @@ class Room extends Hotel
        ];
     public function hotel()
     {
-        return $this->belongsTo(Hotel::class);
+        return $this->belongsTo('App\Hotel');
     }
     
     public function price()
     {  
-        return $this->hasOne(Price::class);
+        return $this->hasOne('App\Price');
         
     }
 }

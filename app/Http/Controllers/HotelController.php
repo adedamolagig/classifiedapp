@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Hotel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HotelController extends Controller
 {
@@ -47,10 +48,13 @@ class HotelController extends Controller
            ]);
         
         //saving to database
-        hotel::create(request(['hotelname', 'state', 'phonenumber']));
+        $aHotel = Hotel::create(request(['hotelname', 'state', 'phonenumber']));
         if ($request->hasFile('image')){
-            $request->file('image');
-            $request->image->store('public');
+            Storage::putFileAs(
+                'public', $request->file('image'), $aHotel->id.'.jpg'
+            );
+            // $request->file('image');
+            // $request->image->store('public');
         }
         else {
             return "No_file_selected";

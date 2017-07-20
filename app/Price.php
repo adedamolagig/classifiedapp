@@ -2,9 +2,9 @@
 
 namespace App;
 
-//use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
-class Price extends Room
+class Price extends Model
 {
     protected $fillable = [
          
@@ -13,4 +13,8 @@ class Price extends Room
        // 'available_at', 
         //'endAvailability_at' 
         ];
+
+    public function room(){
+        $this->hasOne('App\Room');
+    }
 }

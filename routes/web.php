@@ -17,10 +17,10 @@
 Route::get('/hotel', 'HotelController@index')->name('hotel');
 Route::get('/hotel/create', 'HotelController@create')->name('hotel.store');
 Route::post('/hotel', 'HotelController@store')->name('hotel.store');
-Route::get('/{hotel}', 'HotelController@show');
+Route::get('hotels/{hotel}', 'HotelController@show')->name('hotel.view');
 
 Route::post('/hotel/{hotel}/room', 'Admin\RoomController@save')->name('submit');
-Route::post('/{hotel}/price', 'PriceController@store')->name('store.price');
+Route::post('/hotels/{hotel}/price', 'PriceController@store')->name('store.price');
 
 
 //bookroom Route

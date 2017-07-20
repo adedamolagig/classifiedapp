@@ -1,8 +1,9 @@
 
     <h2>
-        <a href="{{ asset ($hotel->id) }}">
+        <a href="{{ route ('hotel.view', $hotel->id) }}">
         {{ $hotel->hotelname }} </a>
     </h2>
+    <img src="{{ asset($hotel->id.'.jpg') }}" width='100px'/>
     <p>{{ $hotel->state}}</p>
     
     
