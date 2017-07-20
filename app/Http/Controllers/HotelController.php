@@ -42,17 +42,26 @@ class HotelController extends Controller
             'hotelname' => 'required|unique:hotels|min:5',
             'state' => 'required',
             'phonenumber' => 'min:11',
+            'image' => 'required | mimes:jpeg,jpg,png | max:1000',
             
            ]);
         
         //saving to database
         hotel::create(request(['hotelname', 'state', 'phonenumber']));
-        $path = $request->file('image');
+        if ($request->hasFile('image')){
+            $request->file('image');
+            $request->image->store('public');
+        }
+        else {
+            return "No_file_selected";
+        }
         
+         //session()->flash('message', 'A new Hotel was successfully saved!');
+         
         
         //redirect to create room page
         
-        return back();
+        return back()->with('message', 'A new Hotel was successfully created!');
     }
 
     /**

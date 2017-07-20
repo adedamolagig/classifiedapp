@@ -17,16 +17,16 @@ $selected_menu = 'gallery';
             <p>{{ $hotel->hotelname }} is located in {{ $hotel->state }} </p>
             @foreach($hotel->rooms as $room)
             
-            <article>
+            <!--<article>
                 {{$room->room_description}}
-            </article>
+            </article>-->
             
             @endforeach
             <div class="container">
             <div class="row">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h1>{{ isset($room->room_capacity)?'Update Room':'Create a Room' }}</h1>
+                        <h1>Create a Room</h1>
                     </div>
                     <div class="panel-body">
                         <div class="row">
@@ -67,7 +67,7 @@ $selected_menu = 'gallery';
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <button class="btn btn-primary" type="submit">{{ isset($room->room_capacity)?'Update this Room':'Add Room' }}</button>
+                                        <button class="btn btn-primary" type="submit">Add Room</button>
                                     </div>
                                 </form>
                                
@@ -84,6 +84,43 @@ $selected_menu = 'gallery';
                                         <button class="btn btn-warning" type="submit">Search</button>
                                     </div>
                                 </form>
+                            </div>
+                             <div class="col-lg-6 col-md-6 tm-contact-form-input">
+                                
+                                    <h5>Set price for room Types</h5>
+                                    
+                                        
+                                    <form method="post" action="{{ route('store.price', $room->id) }}">
+                                        {{ csrf_field() }}
+                                        <div class="form-group">
+                                            <label>Set price for <!--name of room--></label>
+                
+                                            <div class="input-field">
+                                                <label for="start_dt">Start Date</label>
+                                                <input input-date type="date" id="start_dt" name="available_at" />
+                                            
+                                            
+                                                <label for="end_dt">End Date</label>
+                                                <input input-date type="date"  id="end_dt" name="endAvailability_at" />
+                                            
+                                            </div>
+                                            <div class="input-group">
+                                             
+                                              <span class="input-group-addon">$</span>
+                                              <span class="input-group-addon">0.00</span>
+                                              <input type="text" class="form-control" placeholder="price" aria-label="Text input with radio button">
+                                            </div>
+                                             <br />
+                                            <center><button class="btn" type="submit">Set</button></center>
+                                        </div>
+                                        
+                                    </form>    
+                                    <div class="row" some_javascript="message!=null">
+                                        <div class="card-panel">
+                                            <span class="blue-text text-darken-2">message</span>
+                                        </div>
+                                    </div>
+                                
                             </div>
                         </div>
                     </div>

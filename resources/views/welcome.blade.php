@@ -53,11 +53,11 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane fade in active tm-white-bg" id="hotel">
                                 <div class="tm-search-box effect2">
-                                   <!-- <form action="#" method="post" class="hotel-search-form">-->
+                                    <form action="#" method="post" class="hotel-search-form">
                                         <!--<input type="text" id="myInput" class="hotel-search-form" onkeyup="myFunction()" placeholder="Search for names..">-->
                                          
                                              <div id="searchfield">
-                                                <form><input type="text" name="currency" class="form-control" id="autocomplete" placeholder="search for hotels.."></form>
+                                                <input type="text" name="currency" class="form-control" id="autocomplete" placeholder="search for hotels..">
                                               </div><!-- @end #searchfield -->
                                               
                                               <div></div>

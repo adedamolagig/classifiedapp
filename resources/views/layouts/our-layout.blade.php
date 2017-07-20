@@ -191,7 +191,7 @@
   
   
   
-  function previewFile(){
+  function previewFile1(){
        var preview = document.querySelector('img'); //selects the query named img
        var file    = document.querySelector('input[type=file]').files[0]; //sames as here
        var reader  = new FileReader();
@@ -207,7 +207,7 @@
        }
   }
 
-  previewFile();
+  previewFile1();
   
       $(document).ready(function() {
       $(".js-example-basic-single").select2();

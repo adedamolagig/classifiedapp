@@ -16,4 +16,10 @@ class Room extends Hotel
     {
         return $this->belongsTo(Hotel::class);
     }
+    
+    public function price()
+    {  
+        return $this->hasOne(Price::class);
+        
+    }
 }

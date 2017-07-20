@@ -14,8 +14,8 @@
                         <li><a href="{{ route('homepage') }}" class="{{ !isset($selected_menu)?'active':'' }}">Home</a></li>
                         <li><a href="{{ route('login') }}" class="{{ isset($selected_menu)?($selected_menu=='login')?'active':'':'' }}">Login</a></li>
                         <li><a href="{{ route('register') }}" class="{{ isset($selected_menu)?($selected_menu=='register')?'active':'':'' }}">Register</a></li>
-                        <li><a href="{{ route('hotel') }}" class="{{ isset($selected_menu)?($selected_menu=='hotel')?'active':'':'' }}">Hotel</a></li>
-                        <li><a href="{{ route('allhotel') }}" class="{{ isset($selected_menu)?($selected_menu=='allhotel')?'active':'':'' }}">All Hotel</a></li>
+                        <li><a href="{{ route('hotel') }}" class="{{ isset($selected_menu)?($selected_menu=='hotel')?'active':'':'' }}">All Hotel</a></li>
+                        <li><a href="{{ route('create') }}" class="{{ isset($selected_menu)?($selected_menu=='create')?'active':'':'' }}">Create Hotel</a></li>
                     </ul>
                 </nav>		
             </div>				

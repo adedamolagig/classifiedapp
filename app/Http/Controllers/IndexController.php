@@ -48,9 +48,11 @@ class IndexController extends Controller
         return view('admin.create');
     }
     
-    public function allhotel()
+    public function create()
     {
-        return view('showhotel');
+        return view('hotel');
     }
+    
+    
     
 }

@@ -20,7 +20,11 @@ Route::post('/hotel', 'HotelController@store')->name('hotel.store');
 Route::get('/{hotel}', 'HotelController@show');
 
 Route::post('/hotel/{hotel}/room', 'Admin\RoomController@save')->name('submit');
+Route::post('/{hotel}/price', 'PriceController@store')->name('store.price');
 
+
+//bookroom Route
+Route::resource('/bookRoom', 'BookRoomController');
 
 
 // routes @ IndexController
@@ -28,6 +32,7 @@ Route::get('/', 'IndexController@index')->name('homepage')->middleware('guest');
 Route::get('/show', 'IndexController@show')->name('show');
 Route::get('/allhotel', 'IndexController@allhotel')->name('allhotel');
 Route::get('/gallery', 'IndexController@gallery')->name('gallery');
+Route::get('/hotel/create', 'IndexController@create')->name('create');
 //Route::get('/hotel', 'IndexController@hotel')->name('hotel');
 
 // routes @ RegisterController
