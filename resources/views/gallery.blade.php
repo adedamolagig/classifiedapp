@@ -67,6 +67,12 @@ $selected_menu = 'gallery';
                                             <input type="radio" name="room_has_toilet" class="" value="0" {{isset($room->room_has_toilet)?($room->room_has_toilet==0)?'checked':'':''}}/> No
                                             </label>
                                         </div>
+                                        <div class="input-group">
+                                             
+                                              <span class="input-group-addon">$</span>
+                                              <span class="input-group-addon">0.00</span>
+                                              <input type="text" class="form-control" placeholder="price" name="price" aria-label="Text input with radio button">
+                                        </div>
                                     </div>
                                     <div class="form-group">
                                         <button class="btn btn-primary" type="submit">Add Room</button>
@@ -87,43 +93,9 @@ $selected_menu = 'gallery';
                                     </div>
                                 </form>
                             </div>
-                             <div class="col-lg-6 col-md-6 tm-contact-form-input">
-                                
-                                    <h5>Set price for room Types</h5>
-                                    
-                                        
-                                    <form method="post" action="{{ route('store.price', isset($room)?$room->id:null) }}">
-                                        {{ csrf_field() }}
-                                        <div class="form-group">
-                                            <label>Set price for <!--name of room--></label>
-                
-                                            <div class="input-field">
-                                                <label for="start_dt">Start Date</label>
-                                                <input input-date type="date" id="start_dt" name="available_at" />
-                                            
-                                            
-                                                <label for="end_dt">End Date</label>
-                                                <input input-date type="date"  id="end_dt" name="endAvailability_at" />
-                                            
-                                            </div>
-                                            <div class="input-group">
-                                             
-                                              <span class="input-group-addon">$</span>
-                                              <span class="input-group-addon">0.00</span>
-                                              <input type="text" class="form-control" placeholder="price" aria-label="Text input with radio button">
-                                            </div>
-                                             <br />
-                                            <center><button class="btn" type="submit">Set</button></center>
-                                        </div>
-                                        
-                                    </form>    
-                                    <div class="row" some_javascript="message!=null">
-                                        <div class="card-panel">
-                                            <span class="blue-text text-darken-2">message</span>
-                                        </div>
-                                    </div>
-                                
-                            </div>
+                            
+                            
+                            
                         </div>
                     </div>
                 </div>

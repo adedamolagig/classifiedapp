@@ -76,12 +76,12 @@ class RegisterController extends Controller
             'verifyToken' => Str::random(40),
         ]);
         $thisUser = User::findorFail($user->id);
-        $this->sendEmail($thisUser);
+       /** $this->sendEmail($thisUser);*/
     }
     
-    public function sendEmail($thisUser){
+    /**public function sendEmail($thisUser){
         mail::to($thisUser['email'])->send(new verifyEmail($thisUser));
-    }
+    }*/
     
     
 }

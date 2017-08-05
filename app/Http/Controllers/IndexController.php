@@ -50,6 +50,7 @@ class IndexController extends Controller
     
     public function create()
     {
+        flash('Welcome to create a Hotel');
         return view('hotel');
     }
     

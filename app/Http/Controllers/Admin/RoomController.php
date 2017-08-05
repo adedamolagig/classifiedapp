@@ -28,6 +28,7 @@ class RoomController extends Controller
                 'room_capacity' => request('room_capacity'),
                 'room_description' => request('room_description'),
                 'room_has_toilet' => request('room_has_toilet'),
+                'price' => request('price'),
                 'hotel_id' => $hotel->id
            ]);
        

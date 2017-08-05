@@ -2,12 +2,21 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Hotel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class HotelController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except([
+           'index',
+            'create',
+            ]);
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +35,8 @@ class HotelController extends Controller
      */
     public function create()
     {
-        return view('hotel');
+        flash('Welcome to create a Hotel');
+        //return view('hotel');
     }
 
     /**
@@ -43,13 +53,22 @@ class HotelController extends Controller
             'hotelname' => 'required|unique:hotels|min:5',
             'state' => 'required',
             'phonenumber' => 'min:11',
-            'image' => 'required | mimes:jpeg,jpg,png | max:1000',
+            'description' => 'required|min:11',
+            //'image' => 'required | mimes:jpeg,jpg,png,bmp | max:1000',
+            
             
            ]);
         
         //saving to database
-        $aHotel = Hotel::create(request(['hotelname', 'state', 'phonenumber']));
-        if ($request->hasFile('image')){
+        $aHotel = Hotel::create([
+            'hotelname' => request('hotelname'),
+            'state' => request('state'), 
+            'phonenumber' => request('phonenumber'),
+            'description' => request('description'),
+            'user_id' => auth()->id()
+            
+            ]);
+        /*if ($request->hasFile('image')){
             Storage::putFileAs(
                 'public', $request->file('image'), $aHotel->id.'.jpg'
             );
@@ -58,14 +77,14 @@ class HotelController extends Controller
         }
         else {
             return "No_file_selected";
-        }
+        }*/
         
          //session()->flash('message', 'A new Hotel was successfully saved!');
          
         
         //redirect to create room page
-        
-        return back()->with('message', 'A new Hotel was successfully created!');
+        flash('A new Hotel has been created');
+        return back();
     }
 
     /**
@@ -77,7 +96,8 @@ class HotelController extends Controller
     public function show(Hotel $hotel)
     {
         
-        return view('gallery', compact('hotel'));
+       return view('gallery', compact('hotel'));
+       return back();
     }
 
     /**
@@ -89,6 +109,24 @@ class HotelController extends Controller
     public function edit(Hotel $hotel)
     {
         //
+    }
+    
+    public function addphoto(Hotel $hotel, Request $request)
+    {
+        //dd($request->file('image'));
+        
+        //$request->file('image');
+        $file = $request->file('image');//get uploaded file instance 
+        
+        $name = time() . $file->getClientOriginalName();//dynamically choosing a name so a name does not replace a name...e
+        
+        $file->move('hotels/photos', $name);//move temporary image to a resting space
+        
+        //$hotel = Hotel::locatedAt($hotel)->first();//find the hotel
+        
+        //$hotel->images()->create(['path' => "/hotels/photos/{$name}"]);//reference relationship and create a new one
+        
+        return "Done";
     }
 
     /**

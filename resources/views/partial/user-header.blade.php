@@ -18,8 +18,8 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="{{ route('login') }}" class="active">Dashboard</a></li>
                                     <li><a href="{{ route('login') }}">Manage Bookings</a></li>
-                                    <li><a href="{{ route('login') }}">Manage Events</a></li>
-                                    <li><a href="{{ route('login') }}">Add Events</a></li>
+                                    <li><a href="{{ route('create') }}">Create Hotel</a></li>
+                                    <li><a href="{{ route('login') }}">Add Event</a></li>
                                     <li><a href="#" id='logout-url'>Logout</a></li>
                                 </ul>
                             </li>

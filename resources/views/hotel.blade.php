@@ -11,82 +11,120 @@ $selected_menu = 'hotels';
             <div class="row">
                 <div class="tm-section-header section-margin-top">
                     <div class="col-lg-4 col-md-3 col-sm-3"><hr></div>
-                    <div class="col-lg-4 col-md-6 col-sm-6"><h2 class="tm-section-title">Create your Hotels</h2></div>
+                    <div class="col-lg-4 col-md-6 col-sm-6"><h2 class="tm-section-title">{{ isset($hotel->hotelname)?'Update Hotel':'Create a Hotel' }}</h2></div>
                     <div class="col-lg-4 col-md-3 col-sm-3"><hr></div>	
                 </div>
             </div>
             
+            
+            @include ('layouts.flash')
+            
             <!--form section-->
+          
             <form method="POST" action="{{ route ('hotel.store')}}" enctype="multipart/form-data">
                 {{ csrf_field() }}
-            <div class="row">
-                <div class="form-group col-sm-4">
+            
+                
                     
                   @include ('layouts.errors')
                   
-                  @if ($flash = session('message'))
-                      <div id="flash-message" class="alert alert-success" role="alert">
-                          {{ $flash }}
-                      </div>
-                  @endif
-                  
-                    <label for="NameOfHotel">Name of Hotel</label>
-                    <input type="text"  class="form-control" id="hotelname" name="hotelname" required="required">
-                    <br/>
-                    
-                    <label for="locationOfHotel">location of Hotel
-                    
-                    <!--<select type="textarea" class="form-control" id="state" name="state" placeholder="state" required>-->
-                    
-                    <select class="js-example-basic-single" id="state" name="state" placeholder="state" required>
-                      <option value="AG">Agege, Lagos</option>
-                      <option value="AJ">Ajeromi LGA, Lagos</option>
-                      <option value="AL">Alimosho, Lagos</option>
-                      <option value="AO">Amuwo-Odofin, Lagos</option>
-                      <option value="AP">Apapa, Lagos</option>
-                      <option value="BD">Badagry, Lagos</option>
-                      <option value="EP">Epe, Lagos</option>
-                      <option value="EO">Eti-Osa, Lagos</option>
-                      <option value="IL">Ibeju-Lekki, Lagos</option>
-                      <option value="I/I">Ifako/Ijaye, Lagos</option>
-                      <option value="IJK">Ikeja, Lagos</option>
-                      <option value="IKD">Ikorodu, Lagos</option>
-                      <option value="KS">Kosofe, Lagos</option>
-                      <option value="LI">Lagos-Island, Lagos</option>
-                      <option value="LM">Lagos-Mainland, Lagos</option>
-                      <option value="MS">Mushin, Lagos</option>
-                      <option value="OJ">Ojo, Lagos</option>
-                      <option value="OS">Oshodi-Isolo, Lagos</option>
-                      <option value="SH">Shomolu, Lagos</option>
-                      <option value="SU">Surulere, LAgos</option>
-                    </select>
-                    </label>
-                    
-                    <hr>
-                    <label for="contact">Contact Details</label>
-                    <input type="tel" class="form-control" id="number" name="phonenumber" placeholder="+234 801 234 5678" required>
-
-                    <br />
-                    
-                    <label class="custom-file">
-                      <input type="file" id="file" onchange="previewFile()" class="custom-file-input" name="image"  required="required">
-                      <img src="" height="200" width="200" alt="Hotel preview..."><span class=""></span>
-                      Hotel Picture
-                    </label>
-                    
-                    
                    
+                 
+                  <div class="form-group">
+                    <label for="hotelName">Name of Hotel</label>
+                    <input type="text"  class="form-control" id="hotelname" name="hotelname" 
+                        value="{{ old('hotelname') }}" required autofocus />
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="state">State</label>
+                    <select id="state"  class="form-control js-example-basic-single" name="state">
+                    @foreach (App\Http\Utilities\State::all() as $state )
+                      <option value="{{ $state }}">{{ $state }} </option>
+                    @endforeach
+                    </select>
+                  </div>
                     
+                    <div class="form-group">
+                        <label for="parking-space">Parking Space</label>
+                    </div>
                     
-                    <input class="btn btn-primary" type="submit" value="Submit">
+                  <div class="form-group">
+                    <label for="description">A little about your Hotel</label>
+                    <textarea type="text" name="description" class="form-control" id="state" name="description" 
+                        value="{{ old('description') }}" rows="10" required autofocus>
+                    </textarea>   
+                  </div>
+                  
+                  
+                  <div class="form-group">
+                    <label for="contact">Contact Details</label>
+                    <input type="tel" class="form-control" id="number" name="phonenumber" value="{{ old('phonenumber') }}" placeholder="+234 801 234 5678" required autofocus>
+                  </div>
+                  
+                 <!-- <div class="form-group">
+                    <label for="image">Hotel Photos</label>
+                    <input type="file" class="form-control" id="image" name="image" value="{{ old('image') }}" multiple required autofocus />
+                  </div>-->
+                
+                
+                <div id="image" name="image" class="dropzone">
+                  
+                      <div class="dz-default dz-message"> 
+                      upload a minimum of Eight (8) beautiful pictures of your hotel here 
+                      
+                      </div>
                 </div>
-            </div>
+                
+                
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary"> Create Hotel</button>
+                  </div>
+                </div>
+                  
+                 
+                  
+        
+        
             </form>
+        
+        
+         @section('scripts.footer')
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.js"></script>
+            
+            <script>
+                $(document).ready(function () {
+                    Dropzone.autoDiscover = false;
+                    $("#image").dropzone({
+                        url: "{{ route ('photo.save') }}",
+                        addRemoveLinks: true,
+                        maxFilesize: 3,
+                        headers: {
+                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                          
+                        },
+                        acceptedFiles: '.jpg, .jpeg, .png. bmp',
+                        paramName: 'image',
+                        success: function (file, response) {
+                            var imgName = response;
+                            file.previewElement.classList.add("dz-success");
+                            console.log("Successfully uploaded :" + imgName);
+                        },
+                        error: function (file, response) {
+                            file.previewElement.classList.add("dz-error");
+                        }
+                    });
+                });
+              
+            </script>
+          @stop
+          
+          
+          
+          
             
             
             
-            
-            <div class="col-sm-3 offset-sm-1 blog-si"><!--something should be here--></div>
         </div>
         
         </section>

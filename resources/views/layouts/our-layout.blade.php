@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>{{ isset($page_title)?$page_title:'No title' }}</title>
 
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700' rel='stylesheet' type='text/css'>
@@ -12,11 +13,17 @@
   <link href="{{ asset('css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">  
   <link href="{{ asset('css/flexslider.css') }}" rel="stylesheet">
   <link href="{{ asset('css/templatemo-style.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.css" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" type="text/css" />
   
   <!--Select 2 stylesheets-->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-
+  
+  <!--dropzone managing the image upload-->
+  	<link href="{{ asset('css/dropzone.css') }}" rel="stylesheet">
+  	
+  	<link rel="stylesheet" href="/public/css/sweetalert.css" type="text/css" />
+	
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -47,6 +54,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+	
+	<script type="text/javascript" src="/public/js/sweetalert-dev.js"></script>
+	
+	
+	
 <!--
 	<script src="js/froogaloop.js"></script>
 	<script src="js/jquery.fitvid.js"></script>
@@ -171,7 +183,7 @@
 	  	
 	  	
 	  	
-	  	function previewFile(){
+	  /**	function previewFile(){
        var preview = document.querySelector('img'); //selects the query named img
        var file    = document.querySelector('input[type=file]').files[0]; //sames as here
        var reader  = new FileReader();
@@ -187,34 +199,19 @@
        }
   }
 
-  previewFile();
+  previewFile();*/
   
   
-  
-  function previewFile1(){
-       var preview = document.querySelector('img'); //selects the query named img
-       var file    = document.querySelector('input[type=file]').files[0]; //sames as here
-       var reader  = new FileReader();
-
-       reader.onloadend = function () {
-           preview.src = reader.result;
-       }
-
-       if (file) {
-           reader.readAsDataURL(file); //reads the data as a URL
-       } else {
-           preview.src = "";
-       }
-  }
-
-  previewFile1();
   
       $(document).ready(function() {
       $(".js-example-basic-single").select2();
     });
+    
+		   
+    
 	</script>
 	
-	
-
+	@yield('scripts.footer')
+  @include ('layouts.flash') 
  </body>
  </html>

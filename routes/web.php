@@ -15,16 +15,17 @@
 
 // routes for the hotel
 Route::get('/hotel', 'HotelController@index')->name('hotel');
-Route::get('/hotel/create', 'HotelController@create')->name('hotel.store');
+Route::get('/hotel/create', 'HotelController@create')->name('hotel.store');//this thing is actually not working
 Route::post('/hotel', 'HotelController@store')->name('hotel.store');
 Route::get('hotels/{hotel}', 'HotelController@show')->name('hotel.view');
+Route::post('/hotel/photos', 'HotelController@addphoto')->name('photo.save');
 
 Route::post('/hotel/{hotel}/room', 'Admin\RoomController@save')->name('submit');
 Route::post('/hotels/{hotel}/price', 'PriceController@store')->name('store.price');
 
 
 //bookroom Route
-Route::resource('/bookRoom', 'BookRoomController');
+Route::resource('/bookRooms', 'BookRoomController');
 
 
 // routes @ IndexController

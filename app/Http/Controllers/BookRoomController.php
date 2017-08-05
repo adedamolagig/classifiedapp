@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\BookRoom;
 
 class BookRoomController extends Controller
 {
@@ -13,7 +14,8 @@ class BookRoomController extends Controller
      */
     public function index()
     {
-        return view('bookRooms/list', ['bookRoom' => Event::orderBy('start_time')->get()]);
+        //return view('bookRooms/list', compact('bookRooms'));
+        return view('bookRooms/list', ['bookRooms' => BookRoom::orderBy('start_time')->get()]);
     }
 
     /**
@@ -23,7 +25,7 @@ class BookRoomController extends Controller
      */
     public function create()
     {
-        //return view('bookRooms/create');
+        return view('bookRooms/create');
     }
 
     /**
@@ -36,7 +38,7 @@ class BookRoomController extends Controller
     {
         $time = explode(" - ", $request->input('time'));
   
-        $bookroom = new Event;
+        $bookroom = new BookRoom;
         $bookroom->name = $request->input('room_name');
         //$bookroom->title = $request->input('title');
         $bookroom->start_time = $time[0];
@@ -55,7 +57,7 @@ class BookRoomController extends Controller
      */
     public function show($id)
     {
-         return view('bookRooms/view', ['bookRoom' => Event::findOrFail($id)]);
+         return view('bookRooms/view', ['bookRoom' => BookRoom::findOrFail($id)]);
     }
 
     /**
@@ -66,7 +68,7 @@ class BookRoomController extends Controller
      */
     public function edit($id)
     {
-        return view('bookRooms/edit', ['bookRoom' => Event::findOrFail($id)]);
+        return view('bookRooms/edit', ['bookRoom' => BookRoom::findOrFail($id)]);
     }
 
     /**
