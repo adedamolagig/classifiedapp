@@ -10,7 +10,7 @@ $selected_menu = 'show';
         <div class="row">
             <div class="tm-section-header section-margin-top">
                 <div class="col-lg-4 col-md-3 col-sm-3"><hr></div>
-                <div class="col-lg-4 col-md-6 col-sm-6"><h2 class="tm-section-title">Show</h2></div>
+                <div class="col-lg-4 col-md-6 col-sm-6"><h2 class="tm-section-title">All Homes</h2></div>
                 <div class="col-lg-4 col-md-3 col-sm-3"><hr></div>	
             </div>
             

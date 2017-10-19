@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-4 col-sm-3 tm-site-name-container">
-                <a href="{{ route('homepage') }}" class="tm-site-name">Holiday</a>	
+                <a href="{{ route('homepage') }}" class="tm-site-name">HOMEs.ng</a>	
             </div>
             <div class="collapse navbar-collapse tm-nav">
                 <!--<div class="mobile-menu-icon">
@@ -18,7 +18,7 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="{{ route('login') }}" class="active">Dashboard</a></li>
                                     <li><a href="{{ route('login') }}">Manage Bookings</a></li>
-                                    <li><a href="{{ route('create') }}">Create Hotel</a></li>
+                                    <li><a href="{{ route('create') }}">Create Homes</a></li>
                                     <li><a href="{{ route('login') }}">Add Event</a></li>
                                     <li><a href="#" id='logout-url'>Logout</a></li>
                                 </ul>

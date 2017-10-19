@@ -11,7 +11,7 @@ class IndexController extends Controller
     public function index(){
         //$this->middleware = 'guest';
         return view('welcome', [
-            'page_title'=>'Classified Hotel App'
+            'page_title'=>'Classified Home App'
         ]);
     }
 
@@ -50,7 +50,7 @@ class IndexController extends Controller
     
     public function create()
     {
-        flash('Welcome to create a Hotel');
+        flash()->success('Welcome to create a Home', 'You can create a home for somebody');
         return view('hotel');
     }
     

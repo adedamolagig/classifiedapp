@@ -13,9 +13,9 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/app.scss', 'public/css');
-        mix.scripts([
-                '/resources/assets/js/sweetalert-dev.js',
-            ]);
-        mix.styles([
-                '/resources/assets/css/sweetalert.css'
-            ])
+        // mix.scripts([
+        //         '/resources/assets/js/sweetalert-dev.js',
+        //     ]);
+        // mix.styles([
+        //         '/resources/assets/css/sweetalert.css'
+        //     ])

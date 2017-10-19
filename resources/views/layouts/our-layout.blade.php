@@ -12,6 +12,9 @@
   <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
   <link href="{{ asset('css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet">  
   <link href="{{ asset('css/flexslider.css') }}" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href=" {{ asset('css/jquery.fileupload-ui.css') }} ">
+  <link rel="stylesheet" type="text/css" href=" {{ asset('css/jquery.fileupload.css') }} ">
+
   <link href="{{ asset('css/templatemo-style.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.css" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" type="text/css" />
@@ -22,7 +25,7 @@
   <!--dropzone managing the image upload-->
   	<link href="{{ asset('css/dropzone.css') }}" rel="stylesheet">
   	
-  	<link rel="stylesheet" href="/public/css/sweetalert.css" type="text/css" />
+  	<link rel="stylesheet" href=" {{ asset('css/sweetalert.css') }} " type="text/css" />
 	
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -55,7 +58,7 @@
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 	
-	<script type="text/javascript" src="/public/js/sweetalert-dev.js"></script>
+	<script type="text/javascript" src="{{ asset('js/sweetalert-dev.js') }}"></script>
 	
 	
 	
@@ -94,7 +97,7 @@
 		});
 		
 		// Load Flexslider when everything is loaded.
-		$(window).load(function() {	  		
+		// $(window).load(function() {	  		
 			// Vimeo API nonsense
 
 /*
@@ -149,63 +152,63 @@
 
 // for search button
 
-		$( function() {
-    var availableTags = [
-      "Hilton",
-      "Temperance",
-      "Mabatko Hotels",
-      "Ayo-In",
-      "Labambam",
-      "Protea Hotel and Suites",
-      "Bogobiri House",
-      "Eko Hotels and Suites",
-      "Radisson Blu",
-      "Federal Palace Hotel",
-      "Parkview Astoria Hotel",
-      "Sheraton Hotel and Towers",
-      "Golden Tulip",
-      "Sunshine Hotels & Guest House Annex",
-      "Queens Suites",
-      "Pinnaco Hotel",
-      "Owu Hotels",
-      "Partfinder Hotels",
-      "Lafia Hotel",
-      "Landmark Hotel",
-      "Clarion Hotel and Casino",
-      "First World Hotel and Plaza"
-    ];
-    $( "#autocomplete" ).autocomplete({
-      source: availableTags
-    });
-  } );
+		// $( function() {
+  //   var availableTags = [
+  //     "Hilton",
+  //     "Temperance",
+  //     "Mabatko Hotels",
+  //     "Ayo-In",
+  //     "Labambam",
+  //     "Protea Hotel and Suites",
+  //     "Bogobiri House",
+  //     "Eko Hotels and Suites",
+  //     "Radisson Blu",
+  //     "Federal Palace Hotel",
+  //     "Parkview Astoria Hotel",
+  //     "Sheraton Hotel and Towers",
+  //     "Golden Tulip",
+  //     "Sunshine Hotels & Guest House Annex",
+  //     "Queens Suites",
+  //     "Pinnaco Hotel",
+  //     "Owu Hotels",
+  //     "Partfinder Hotels",
+  //     "Lafia Hotel",
+  //     "Landmark Hotel",
+  //     "Clarion Hotel and Casino",
+  //     "First World Hotel and Plaza"
+  //   ];
+  //   $( "#autocomplete" ).autocomplete({
+  //     source: availableTags
+  //   });
+  // } );
 			
-	  	});
+	 //  	});
 	  	
 	  	
 	  	
-	  /**	function previewFile(){
-       var preview = document.querySelector('img'); //selects the query named img
-       var file    = document.querySelector('input[type=file]').files[0]; //sames as here
-       var reader  = new FileReader();
+	 //  /**	function previewFile(){
+  //      var preview = document.querySelector('img'); //selects the query named img
+  //      var file    = document.querySelector('input[type=file]').files[0]; //sames as here
+  //      var reader  = new FileReader();
 
-       reader.onloadend = function () {
-           preview.src = reader.result;
-       }
+  //      reader.onloadend = function () {
+  //          preview.src = reader.result;
+  //      }
 
-       if (file) {
-           reader.readAsDataURL(file); //reads the data as a URL
-       } else {
-           preview.src = "";
-       }
-  }
+  //      if (file) {
+  //          reader.readAsDataURL(file); //reads the data as a URL
+  //      } else {
+  //          preview.src = "";
+  //      }
+  // }
 
-  previewFile();*/
+  // previewFile();*/
   
   
   
-      $(document).ready(function() {
-      $(".js-example-basic-single").select2();
-    });
+  //     $(document).ready(function() {
+  //     $(".js-example-basic-single").select2();
+  //   });
     
 		   
     
